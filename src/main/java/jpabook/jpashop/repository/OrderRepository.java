@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.util.ArrayList;
@@ -14,6 +15,8 @@ import java.util.List;
 @Repository
 public class OrderRepository {
 
+
+    @PersistenceContext // 인젝션 주입 // @RequiredArgsConstructor 생성사 주입안쓰고 필드주입 쓴이유 아래 OrderRepository 생성자 떔시
     private final EntityManager em;
 
     public OrderRepository(EntityManager em) {

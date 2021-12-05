@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
-@RequiredArgsConstructor
+@RequiredArgsConstructor // 생성자 주입
 public class MemberRepository {
 
     private final EntityManager em;
