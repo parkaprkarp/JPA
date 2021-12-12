@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +30,8 @@ public class OrderServiceTest {
     @Autowired OrderRepository orderRepository;
 
     @Test
+    // @Rollback(false) = @Transactional는 기본적으로 rollback을 하기 때문에 insert 보고싶으면 롤백 false
+    // OR INSERT 문 넣고싶으면 em.flush(); 하고 영속성컨테이너를 계속진행 // 그럼 자동 롤백
     public void 상품주문() throws Exception {
         //given
         Member member = createMember();

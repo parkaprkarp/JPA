@@ -13,7 +13,7 @@ import static javax.persistence.FetchType.*;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PROTECTED) //  다른 도메인에서 생성 제약 있는 생성 메서드 사용 제약 스타일
 public class OrderItem {
 
     @Id @GeneratedValue

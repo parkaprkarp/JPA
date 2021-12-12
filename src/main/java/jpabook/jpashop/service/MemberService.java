@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+@Service // componet 스캔하여 자동 빈 등록
 @Transactional(readOnly = true)
-@RequiredArgsConstructor
+@RequiredArgsConstructor // final에 대한 생성자 생성
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -18,7 +18,7 @@ public class MemberService {
     /**
      * 회원 가입
      */
-    @Transactional
+    @Transactional // 우선권 // 기본적으로 readOnly false // true면 데이터 안바뀜
     public Long join(Member member) {
 
         validateDuplicateMember(member); //중복 회원 검증

@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor // 생성자 주입
 public class MemberRepository {
 
-    private final EntityManager em;
+    private final EntityManager em; // 영속성컨테이너 // DB들어간시점아니여도 있음
 
     public void save(Member member) {
         em.persist(member);
